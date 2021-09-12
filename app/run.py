@@ -7,7 +7,7 @@ from nltk.tokenize import word_tokenize
 
 from flask import Flask
 from flask import render_template, request, jsonify
-from plotly.graph_objs import Bar
+from plotly.graph_objs import Bar, Heatmap
 from sklearn.externals import joblib
 from sqlalchemy import create_engine
 
@@ -42,9 +42,15 @@ def index():
     # TODO: Below is an example - modify to extract data for your own visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
-    
+    col_names = df.columns[-36:]
+    col_counts = df.sum().values[-36:]
+    corr = df.drop(['message','genre'], axis=1).corr().values
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
+    
+    # The first graph is the default genre count
+    # The second graph creates a sum for each class
+    # The third graph is a heatmap of the correlation between classes 
     graphs = [
         {
             'data': [
@@ -55,13 +61,44 @@ def index():
             ],
 
             'layout': {
-                'title': 'Distribution of Message Genres',
+                'title': 'Distribution of Message Classes',
                 'yaxis': {
                     'title': "Count"
                 },
                 'xaxis': {
                     'title': "Genre"
                 }
+            }
+        },
+        {
+            'data': [
+                Bar(
+                    x=col_names,
+                    y=col_counts
+                )
+            ],
+
+            'layout': {
+                'title': 'Distribution of Message Genres',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Classification"
+                }
+            }
+        },
+        {
+            'data': [
+                Heatmap(
+                    z=corr,
+                    x=col_names,
+                    y=col_names
+                )
+            ],
+
+            'layout': {
+                'title': 'Correlation of Message Classes',
             }
         }
     ]
