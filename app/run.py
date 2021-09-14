@@ -40,11 +40,22 @@ def index():
     
     # extract data needed for visuals
     # TODO: Below is an example - modify to extract data for your own visuals
+    
+    # The first chart is a bar chart of the aggregated counts for each genre in the training set.
+    # the genre counts are computed and the names are created in a list
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
+    
+    # The second chart (custom) is the aggregated counts of each class.
+    # col_names is the names of each column and col_counts is the count of the posts classed positively in each column. 
     col_names = df.columns[-36:]
     col_counts = df.sum().values[-36:]
+    
+    # The third chart (custom) is a heatmap showing the correlation between classes 
+    # The correlation is found using the dataframe's own corr() function and converted to an array. 
+    # The purpose of this chart is to visualise how often two or more classes co-existed for a given message
     corr = df.drop(['message','genre'], axis=1).corr().values
+    
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
     
