@@ -21,6 +21,17 @@ from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 from sklearn.neighbors import KNeighborsClassifier
 
 def load_data(database_filepath):
+    """
+    Load the data from the SQLite database and create the input X and output Y DataFrames. 
+    
+    Inputs: 
+    database_filepath - the location of the database.db file
+    
+    Return:
+    X - pandas DataFrame of the model inputs 
+    Y - pandas DataFrame of the model output classes
+    Y.colums - list of the classes
+    """
     # Load the data from the sqlite database
     engine = create_engine('sqlite:///'+database_filepath)
     df = pd.read_sql_table('ETL_Table', engine)
@@ -36,6 +47,15 @@ def load_data(database_filepath):
 
 
 def tokenize(text):
+    """
+    Tokenise the text input data, replacing the URL with a placeholder, removing stop words and lemmatizing the words. 
+    
+    Inputs:
+    text - a text input or message 
+    
+    Returns:
+    tokens - tokenized form of the text input. 
+    """
     # regex for URLs to be replaced with a placeholder
     url_regex = 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
     detected_urls = re.findall(url_regex,text)
@@ -49,6 +69,15 @@ def tokenize(text):
 
 
 def build_model():
+    """
+    Builds the model pipeline, defines the gridsearch parameters and returns the gridsearch model object
+    
+    Inputs:
+    None
+    
+    Returns:
+    cv - gridsearch model with pipeline and parameters defined. 
+    """
     # The model pipeline, where CountVectorizer uses the tokenizer, TF-IDF is applied and multi-output classifier uses AdaBoostClassifier
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer = tokenize)),
@@ -68,6 +97,18 @@ def build_model():
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
+    """
+    Evaluates the model with test data and outputs the classification report
+    
+    Inputs:
+    model - the trained model
+    X_test - pandas DataFrame of test data 
+    Y_test - pandas DataFrame of test classes
+    category_names - list of categories (classes)
+    
+    Returns:
+    None
+    """
     # test data is used with model to generate predictions
     y_pred = model.predict(X_test)
     
@@ -81,12 +122,25 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 
 def save_model(model, model_filepath):
+    """
+    Saves the model as a pickle file.
+    
+    Inputs:
+    model - the trained model
+    model_filepath - the path to the location where the model will be saved.
+    
+    Returns:
+    None
+    """
     # model is saved as a pickle file
     pickle.dump(model,open(model_filepath,'wb'))
     return
 
 
 def main():
+    """
+    Main program. Loads the data, splits into training and test set. Builds and trains model. Evaluates and saves model. 
+    """
     if len(sys.argv) == 3:
         # inputs variables are initialised
         database_filepath, model_filepath = sys.argv[1:]
