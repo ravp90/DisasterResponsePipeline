@@ -58,6 +58,9 @@ def clean_data(df):
     # concatenate the categories dataframe to the existing df 
     df = pd.concat([df,categories], axis=1, sort=False)
     
+    # the related field contains some values of 2, to make this binary, map the 2s to 1s
+    df['related'] = df['related'].map({0:0,1:1,2:1})
+    
     # drop any duplicates
     df = df.drop_duplicates()
     

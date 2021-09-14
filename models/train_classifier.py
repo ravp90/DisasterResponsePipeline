@@ -39,10 +39,6 @@ def load_data(database_filepath):
     X = df['message']
     # create the model output Y class data
     Y = df.drop(['id','message','original','genre'], axis=1) 
-    # the related field contains some values of 2, to make this binary, map the 2s to 1s
-    # there are very few of these 2's, so they were re-mapped to 1 assuming they may have been misclassified. 
-    # it is expected that the impact on the model will be negligible given the size of the dataset.
-    Y['related'] = Y['related'].map({0:0,1:1,2:1})
     return X, Y, Y.columns
 
 
