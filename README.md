@@ -50,13 +50,13 @@ The app is ready for deployment already, the repository contains a populated dat
 
 ### Using the app
 The main page for the app looks as follows:
-![Landing Page](https://github.com/canaveensetia/udacity-disaster-response-pipeline/screenshots/LandingPage.PNG)
+![Landing Page](https://github.com/ravp90/DisasterResponsePipeline/tree/main/screenshots/LandingPage.PNG)
 
 Enter a message into the message box:
-![Enter a message](https://github.com/canaveensetia/udacity-disaster-response-pipeline/screenshots/EnterAMessage.PNG)
+![Enter a message](https://github.com/ravp90/DisasterResponsePipeline/tree/main/screenshots/EnterAMessage.PNG)
 
 Then click the Classify Message. The classes will then appear in the list highlighted in green:
-![Classification](https://github.com/canaveensetia/udacity-disaster-response-pipeline/screenshots/Classification.PNG)
+![Classification](https://github.com/ravp90/DisasterResponsePipeline/tree/main/screenshots/Classification.PNG)
 
 ## Authors
 Ravi Parekh, MEng PhD. 
