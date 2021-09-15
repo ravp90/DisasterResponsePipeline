@@ -1,15 +1,5 @@
 # Disaster Response Pipeline
 
-## Table of Contents 
-*[Introduction](##Introduction)
-*[Project Contents](##Project Contents)
-*[How to deploy the app](##How to deploy the app)
-	*[Instructions](###Instructions)
-*[Using the app](###Using the app)
-*[Authors](##Authors)
-*[License](##License)
-*[Acknowledgements](## Acknowledgements)
-
 ## Introduction 
 This repository contains a deployable web app for a disaster response pipeline. The purpose of this app is to allow a user to enter the text from a social media post and the output from the app is a classification result which classifies if the post is indicating a disaster has occurred. 
 Social media is so widely used that a disaster can often be reported first on social media before it is reported in more traditional media or before emergency services are contacted. This type of app could modified to ingest high volumes of social media post to find locations of disasters as early as possible, with the aim to respond to these disasters as soon as possible. 
@@ -50,13 +40,13 @@ The app is ready for deployment already, the repository contains a populated dat
 
 ### Using the app
 The main page for the app looks as follows:
-![Landing Page](https://github.com/ravp90/DisasterResponsePipeline/tree/main/screenshots/LandingPage.PNG)
+![Landing Page](https://github.com/ravp90/DisasterResponsePipeline/tree/main/screenshots/LandingPage.PNG?raw=true)
 
 Enter a message into the message box:
-![Enter a message](https://github.com/ravp90/DisasterResponsePipeline/tree/main/screenshots/EnterAMessage.PNG)
+![Enter a message](https://github.com/ravp90/DisasterResponsePipeline/tree/main/screenshots/EnterAMessage.PNG?raw=true)
 
 Then click the Classify Message. The classes will then appear in the list highlighted in green:
-![Classification](https://github.com/ravp90/DisasterResponsePipeline/tree/main/screenshots/Classification.PNG)
+![Classification](https://github.com/ravp90/DisasterResponsePipeline/tree/main/screenshots/Classification.PNG?raw=true)
 
 ## Authors
 Ravi Parekh, MEng PhD. 
