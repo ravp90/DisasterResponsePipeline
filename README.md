@@ -40,13 +40,13 @@ The app is ready for deployment already, the repository contains a populated dat
 
 ### Using the app
 The main page for the app looks as follows:
-![Landing Page](https://github.com/ravp90/DisasterResponsePipeline/tree/main/screenshots/LandingPage.PNG?raw=true)
+![Landing Page](tree/main/screenshots/LandingPage.PNG?raw=true)
 
 Enter a message into the message box:
-![Enter a message](https://github.com/ravp90/DisasterResponsePipeline/tree/main/screenshots/EnterAMessage.PNG?raw=true)
+![Enter a message](screenshots/EnterAMessage.PNG?raw=true)
 
 Then click the Classify Message. The classes will then appear in the list highlighted in green:
-![Classification](https://github.com/ravp90/DisasterResponsePipeline/tree/main/screenshots/Classification.PNG?raw=true)
+![Classification](main/screenshots/Classification.PNG?raw=true)
 
 ## Authors
 Ravi Parekh, MEng PhD. 
