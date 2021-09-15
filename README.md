@@ -29,24 +29,24 @@ The app is ready for deployment already, the repository contains a populated dat
 1. Run the following commands in the project's root directory to set up your database and model.
 
     - To run ETL pipeline that cleans data and stores in database
-        `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
+        - `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
     - To run ML pipeline that trains classifier and saves
-        `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
+        - `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
 
 2. Run the following command in the app's directory to run your web app.
-    `python run.py`
+    - `python run.py`
 
 3. Go to http://0.0.0.0:3001/
 
 ### Using the app
 The main page for the app looks as follows:
-![Landing Page](tree/main/screenshots/LandingPage.PNG?raw=true)
+![Landing Page](screenshots/LandingPage.PNG?raw=True)
 
 Enter a message into the message box:
 ![Enter a message](screenshots/EnterAMessage.PNG?raw=true)
 
 Then click the Classify Message. The classes will then appear in the list highlighted in green:
-![Classification](main/screenshots/Classification.PNG?raw=true)
+![Classification](screenshots/Classification.PNG?raw=true)
 
 ## Authors
 Ravi Parekh, MEng PhD. 
@@ -55,5 +55,5 @@ Ravi Parekh, MEng PhD.
 This project is created using some content (data and code) provided by Udacity under the Data Scientist Nanodegree. A lot of the code is customised by the author of this repository. The author declares that the customised code is free to use and waives all copyright or related rights to this work. 
 
 ## Acknowledgements
-[Udacity Data Scientist Nanodegree](https://www.udacity.com/course/data-scientist-nanodegree--nd025)
-[Appen](https://appen.com/)
+* [Udacity Data Scientist Nanodegree](https://www.udacity.com/course/data-scientist-nanodegree--nd025)
+* [Appen](https://appen.com/)
