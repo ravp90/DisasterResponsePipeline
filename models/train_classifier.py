@@ -78,7 +78,7 @@ def build_model():
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer = tokenize)),
         ('tfidf', TfidfTransformer()),
-        ('clf', MultiOutputClassifier(AdaBoostClassifier(),n_jobs=-1))
+        ('clf', MultiOutputClassifier(AdaBoostClassifier()))
     ])
     
     # The parameters for the gridsearch, applied only to the AdaBoostClassifier
