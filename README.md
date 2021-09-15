@@ -1,14 +1,14 @@
 # Disaster Response Pipeline
 
 ## Table of Contents 
-[Introduction](## Introduction)
-[Project Contents](## Project Contents)
-[How to deploy the app](## How to deploy the app)
-	[Instructions](### Instructions)
-[Using the app](### Using the app)
-[Authors](## Authors)
-[License](## License)
-[Acknowledgements](## Acknowledgements)
+*[Introduction](##Introduction)
+*[Project Contents](##Project Contents)
+*[How to deploy the app](##How to deploy the app)
+	*[Instructions](###Instructions)
+*[Using the app](###Using the app)
+*[Authors](##Authors)
+*[License](##License)
+*[Acknowledgements](## Acknowledgements)
 
 ## Introduction 
 This repository contains a deployable web app for a disaster response pipeline. The purpose of this app is to allow a user to enter the text from a social media post and the output from the app is a classification result which classifies if the post is indicating a disaster has occurred. 
